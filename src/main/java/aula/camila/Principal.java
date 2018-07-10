@@ -7,8 +7,7 @@ public class Principal {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
-        Objeto o = (Objeto) context.getBean("camila");
-        o.cumprimentar();
+        Tela tela = (Tela) context.getBean("tela");
     }
 
 }

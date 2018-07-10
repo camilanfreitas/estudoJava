@@ -8,6 +8,8 @@
 
     <context:component-scan base-package="aula.camila" />
 
-    <bean id="camila" class="aula.camila.Objeto"/>
+    <bean id="camila" class="aula.camila.Objeto">
+       <constructor-arg value="Camilao" />
+    </bean>
 
 </beans>
