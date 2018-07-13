@@ -8,8 +8,11 @@
 
     <context:component-scan base-package="aula.camila" />
 
-    <bean id="camila" class="aula.camila.Objeto">
-       <constructor-arg value="Camilao" />
-    </bean>
+    <!--<bean id="carro" class="aula.camila.Carro">-->
+       <!--<property name="nome" value= "Ferrari F250"/>-->
+       <!--<property name="motor" ref="motor"/>-->
+    <!--</bean>-->
+    <!---->
+    <!--<bean id="motor" class="aula.camila.MotorPeba"/>-->
 
 </beans>
