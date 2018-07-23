@@ -15,4 +15,13 @@
     <!---->
     <!--<bean id="motor" class="aula.camila.MotorPeba"/>-->
 
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:~/camila" />
+        <property name="username" value="sa" />
+        <property name="password" value="sa" />
+        <property name="initialSize" value="1" />
+        <property name="maxActive" value="5" />
+    </bean>
+
 </beans>
