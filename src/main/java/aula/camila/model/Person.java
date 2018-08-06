@@ -7,4 +7,5 @@ import lombok.Data;
 public class Person {
     private Long id;
     private String name;
+    private String fone;
 }
