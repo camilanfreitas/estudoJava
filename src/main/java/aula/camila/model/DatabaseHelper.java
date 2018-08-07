@@ -14,7 +14,7 @@ public class DatabaseHelper {
 
     @PostConstruct
     public void construirEstrutura(){
-        jdbc.execute("CREATE TABLE IF NOT EXISTS PERSON(ID BIGINT AUTO_INCREMENT, NAME VARCHAR(50) NOT NULL , FONE VARCHAR(15) NOT NULL)");
+         jdbc.execute("CREATE TABLE IF NOT EXISTS PERSON(ID BIGINT AUTO_INCREMENT, NAME VARCHAR(50) NOT NULL , FONE VARCHAR(15) NOT NULL)");
     }
 
 }

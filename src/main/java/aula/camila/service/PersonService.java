@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
@@ -23,12 +25,20 @@ public class PersonService {
     }
 
     @Transactional
-    public void delete(Long id){
+    public void delete(Long id) {
 
     }
 
     public Person findById(Long id){
-        return null;
+        return repository.findById(id);
+    }
+
+    public List<Person> list(){
+        return repository.list();
+    }
+
+    public List<Person> findByName(String name){
+        return repository.findByName(name);
     }
 
 }

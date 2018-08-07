@@ -9,7 +9,9 @@ public class Principal {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         ApplicationScreen app = (ApplicationScreen)context.getBean("applicationScreen");
-        app.salvarUsuario();
+        //System.out.println(app.salvarUsuario());
+        //app.listarUsuarios();
+        app.findByName();
     }
 
 }
