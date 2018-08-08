@@ -2,6 +2,7 @@ package aula.camila.repository;
 
 import aula.camila.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 public class PersonRepository {
@@ -67,11 +69,15 @@ public class PersonRepository {
         return jdbc.query(sql,param, this::mapRow);
     }
 
-    public Person findById(Long id){
+    public Optional<Person> findById(Long id){
         String sql = sqlDefault + " where id =  :id";
         Map<String,Object> param = new HashMap();
         param.put("id",id);
-        return jdbc.queryForObject(sql,param, this::mapRow);
+        try{
+            return Optional.of(jdbc.queryForObject(sql,param, this::mapRow));
+        }catch (EmptyResultDataAccessException e){
+            return Optional.empty();
+        }
     }
 
     private Person mapRow(ResultSet rs, int i) throws SQLException {
